@@ -1,3 +1,4 @@
+var fs = require('fs');
 const express = require('express');
 const app = express();
 const pgp = require('pg-promise')()
@@ -16,8 +17,15 @@ app.get('/', function (req, res) {
 });
 app.post('/upload', function (req, res) {
     console.log(req.body);
+    let keys=Object.keys(req.body);
+    let result=[];
+    for(let i=0;i<keys.length;i++){
+        result.push(req.body[keys[i]]);
+    }
+    
+    fs.appendFileSync('../datasets/liver.csv', result.join(','));
     var spawn = require("child_process").spawn;
-    var process = spawn('python', ["../models/liver.py", 2, 2]);
+    var process = spawn('python', ["../models/modelLoader.py", "liver"].concat(result));
 
     process.stdout.on('data', function (data) {
         console.log(data.toString())
@@ -26,5 +34,7 @@ app.post('/upload', function (req, res) {
     process.stderr.on('data', function (data) {
         console.log(data.toString())
     });
+
+
 })
 
