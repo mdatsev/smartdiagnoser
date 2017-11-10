@@ -23,7 +23,7 @@ app.post('/upload', function (req, res) {
         result.push(req.body[keys[i]]);
     }
     
-    fs.appendFileSync('../datasets/liver.csv', result.join(','));
+    fs.appendFileSync('../datasets/liver.csv', "\n"+result.join(','));
     var spawn = require("child_process").spawn;
     var process = spawn('python', ["../models/modelLoader.py", "liver"].concat(result));
 
