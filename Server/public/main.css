@@ -31,7 +31,7 @@ form {
   border-radius: 5px;
   max-width:700px;
   width:100%;
-  margin: 5% auto;
+  margin: 4% auto;
   background-color: #FFFFFF;
   overflow: hidden;
 }
@@ -51,7 +51,7 @@ h1 {
   text-align:center; 
   color: #666;
   text-shadow: 1px 1px 0px #FFF;
-  margin:50px 0px 0px 0px
+  margin:35px 0px 0px 0px
 }
 
 input {
