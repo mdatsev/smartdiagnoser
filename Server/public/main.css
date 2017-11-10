@@ -56,10 +56,10 @@ h1 {
 
 input {
   border-radius: 0px 5px 5px 0px;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   margin-bottom: 15px;
   width: 75%;
-  height: 40px;
+  height: 42px;
   float: left;
   padding: 0px 15px;
 }
@@ -87,7 +87,7 @@ textarea {
   width: 35px;
   float: left;
   border-radius: 5px 0px 0px 5px;
-  background:#eeeeee;
+  background:#dddddd;
   height:42px;
   position: relative;
   text-align: center;
@@ -116,15 +116,14 @@ i {
 }
 
 .leftcontact {
-  width:49.5%; 
+  width:50%; 
   float:left;
-  border-right: 1px dotted #CCC;
   box-sizing: border-box;
   padding: 0px 15px 0px 0px;
 }
 
 .rightcontact {
-  width:49.5%;
+  width:50%;
   float:right;
   box-sizing: border-box;
   padding: 0px 0px 0px 15px;
