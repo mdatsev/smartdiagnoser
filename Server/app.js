@@ -25,9 +25,9 @@ app.post('/upload', function (req, res) {
         result.push(req.body[keys[i]]);
     }
 
-    fs.appendFileSync('../datasets/liver.csv', "\n" + result.join(','));
+    //fs.appendFileSync(path.join(__dirname, '../datasets/liver.csv'), "\n" + result.join(','));
     var spawn = require("child_process").spawn;
-    var process = spawn('python', ["../models/modelLoader.py", "liver"].concat(result));
+    var process = spawn('python3', [path.join(__dirname, "../models/modelLoader.py"), "model3"].concat(result));
 
     process.stdout.on('data', function (data) {
         console.log(data.toString())

@@ -7,16 +7,20 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import scale
 from sklearn.metrics import precision_score
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix,precision_recall_curve,auc,roc_auc_score,roc_curve,recall_score,classification_report
+from sklearn.externals import joblib
 #Input data files are available in the directory.
 from subprocess import check_output
-print(check_output(["ls", "../datasets/liver.csv"]).decode("utf8"))
+
+print(check_output(["ls", "datasets/liver.csv"]).decode("utf8"))
 # Any results you write to the current directory are saved as output.
 
 
-df = pd.read_csv("../datasets/liver.csv")
+
+df = pd.read_csv("datasets/liver.csv")
 #print(df.columns) # gives us the names of the features in the dataset that might help predict if patient has a disease.
 #df.describe()
 df['is_patient'] = df['is_patient'].map({2:0,1:1}) 
@@ -25,13 +29,15 @@ df['alkphos'].fillna(value=0, inplace=True)
 data_features = df.drop(['is_patient'], axis = 1)
 data_num_features = df.drop(['gender', 'is_patient'], axis = 1)
 
-scaler = StandardScaler()
-cols = list(data_num_features.columns)
-data_features_scaled = pd.DataFrame(data = data_features)
-data_features_scaled[cols] = scaler.fit_transform(data_features[cols])
-data_exp = pd.get_dummies(data_features_scaled)
+#scaler = StandardScaler()
+#cols = list(data_num_features.columns)
+#data_features_scaled = pd.DataFrame(data = data_features)
+#data_features_scaled[cols] = scaler.fit_transform(data_features[cols])
+data_exp = pd.get_dummies(data_features)
 
-X = data_exp
+#X = scale(data_exp)
+scaler = StandardScaler().fit(data_exp.as_matrix().tolist())
+X = scaler.transform(data_exp.as_matrix().tolist())
 y = df.loc[:, "is_patient"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state = 0)
 
@@ -73,4 +79,7 @@ print(specificity)
 
 false_positive_rate, true_positive_rate, thresholds = roc_curve(y_test, predictions)
 roc_auc = auc(false_positive_rate, true_positive_rate)
+joblib.dump(clf, 'models/model3.pkl')
+joblib.dump(scaler, 'models/model3.scaler') 
+
 #print (roc_auc)
