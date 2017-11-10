@@ -1,0 +1,93 @@
+html
+	link(rel='stylesheet', href='main.css')
+	body
+		h1 PreDisease
+		.info
+			
+		form(method='POST' action='/upload')
+			h1 Input the data below:
+			.contentform 
+				.leftcontact
+					.form-group
+						p
+							| Age
+							span *
+						span.icon-case
+							i.fa.fa-male
+						input#nom(type="text", name="age", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Nom' doit être renseigné.")
+						.validation
+					.form-group
+						p
+							| Gender 
+							span *
+						span.icon-case
+							i.fa.fa-user
+						input#prenom(type="text", name="gender", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné.")
+						.validation
+					.form-group
+						p
+							| Total Bilirubin 
+							span *
+						span.icon-case
+							i.fa.fa-envelope-o
+						input#email(type="text", name="tot_bil", data-msg="Vérifiez votre saisie sur les champs : Le champ 'E-mail' est obligatoire.")
+						.validation
+					.form-group
+						p
+							| Direct Bilirubin
+							span *
+						span.icon-case
+							i.fa.fa-home
+						input#society(type="text", name="dir_bil", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Société' doit être renseigné.")
+						.validation
+					.form-group
+						p
+							| Phosphotase 
+							span *
+						span.icon-case
+							i.fa.fa-location-arrow
+						input#adresse(type="text", name="phos", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Adresse' doit être renseigné.")
+						.validation
+					.form-group
+						p
+							| Alamine Aminotransferase 
+							span *
+						span.icon-case
+							i.fa.fa-map-marker
+						input#postal(type="text", name="ala_amin", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Code postal' doit être renseigné.")
+						.validation
+				.rightcontact
+					.form-group
+						p
+							| Aspartate Aminotransferase
+							span *
+						span.icon-case
+							i.fa.fa-building-o
+						input#ville(type="text", name="asp_amin", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné.")
+						.validation
+					.form-group
+						p
+							| Total Protiens 
+							span *
+						span.icon-case
+							i.fa.fa-phone
+						input#phone(type="text", name="tot_prot", data-rule="maxlen:10", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres")
+						.validation
+					.form-group
+						p
+							| Albumin 
+							span *
+						span.icon-case
+							i.fa.fa-info
+						input#fonction(type="text", name="alb", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Fonction' doit être renseigné.")
+						.validation
+					.form-group
+						p
+							| Albumin and Globulin Ratio 
+							span *
+						span.icon-case
+							i.fa.fa-comment-o
+						input#sujet(type="text", name="alb_glob_rat", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné.")
+						.validation
+					.form-group
+			button.bouton-contact(type="submit") Get your diagnose
