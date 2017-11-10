@@ -14,7 +14,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-male
-						input#nom(type="text", name="age", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Nom' doit être renseigné.")
+						input(type="text", name="age", data-rule="required")
 						.validation
 					.form-group
 						p
@@ -22,7 +22,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-user
-						input#prenom(type="text", name="gender", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Prénom' doit être renseigné.")
+						input(type="text", name="gender", data-rule="required")
 						.validation
 					.form-group
 						p
@@ -30,7 +30,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-envelope-o
-						input#email(type="text", name="tot_bil", data-msg="Vérifiez votre saisie sur les champs : Le champ 'E-mail' est obligatoire.")
+						input(type="text", name="tot_bil")
 						.validation
 					.form-group
 						p
@@ -38,7 +38,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-home
-						input#society(type="text", name="dir_bil", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Société' doit être renseigné.")
+						input(type="text", name="dir_bil", data-rule="required")
 						.validation
 					.form-group
 						p
@@ -46,7 +46,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-location-arrow
-						input#adresse(type="text", name="phos", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Adresse' doit être renseigné.")
+						input(type="text", name="phos", data-rule="required")
 						.validation
 				.rightcontact
 					.form-group
@@ -55,7 +55,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-map-marker
-						input#postal(type="text", name="ala_amin", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Code postal' doit être renseigné.")
+						input(type="text", name="ala_amin", data-rule="required")
 						.validation
 					.form-group
 						p
@@ -63,7 +63,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-building-o
-						input#ville(type="text", name="asp_amin", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné.")
+						input(type="text", name="asp_amin", data-rule="required")
 						.validation
 					.form-group
 						p
@@ -71,7 +71,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-phone
-						input#phone(type="text", name="tot_prot", data-rule="maxlen:10", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres")
+						input(type="text", name="tot_prot", data-rule="maxlen:10")
 						.validation
 					.form-group
 						p
@@ -79,7 +79,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-info
-						input#fonction(type="text", name="alb", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Fonction' doit être renseigné.")
+						input(type="text", name="alb", data-rule="required")
 						.validation
 					.form-group
 						p
@@ -87,7 +87,7 @@ html
 							span *
 						span.icon-case
 							i.fa.fa-comment-o
-						input#sujet(type="text", name="alb_glob_rat", data-rule="required", data-msg="Vérifiez votre saisie sur les champs : Le champ 'Sujet' doit être renseigné.")
+						input(type="text", name="alb_glob_rat", data-rule="required")
 						.validation
 					.form-group
 			button.bouton-contact(type="submit") Get your diagnose
