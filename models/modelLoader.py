@@ -18,9 +18,7 @@ else:
     data.append(1)
 del data[1]
 data = list(map(float, data))
-print(data)
 X = scaler.transform([data])
-print(X)
 
-print(model.predict(X))
+print(model.predict(X)[0])
 sys.stdout.flush()

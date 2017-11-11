@@ -31,6 +31,9 @@ app.post('/upload', function (req, res) {
 
     process.stdout.on('data', function (data) {
         console.log(data.toString())
+        res.render('result', {
+            result: result
+        });
     });
 
     process.stderr.on('data', function (data) {
